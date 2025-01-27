@@ -1,0 +1,145 @@
+.footerBody{
+    padding: 80px 0px ;
+    background-color: var(--black);
+    color: var(--text-white);
+}
+
+.footContainer{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap:24px;
+}
+.logo{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.72px;
+}
+
+.subLogo{
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+
+.para{
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 16px;
+    display: block;
+    color: var(--text-gray);
+}
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px ;
+    gap: 15px ;
+    border-radius: 4px ;
+    border: 1.5px solid var(--text-white);
+    font-family: Poppins;
+}
+.realInput{
+    width: 150px ;
+    background-color: transparent;
+    border: none;
+    color: var(--text-white);
+}
+
+.sendIcon{
+    cursor: pointer;
+    width: 20px ;
+    height: 20px ;
+   transition: 300ms;
+}
+.sendIcon:hover{
+scale: 1.05;    
+}
+
+.realInput:focus{
+    border: none;
+    outline: none;
+}
+
+.list{
+    list-style: none;
+    padding: 0px ;
+    margin-top: 24px ;
+    display: flex;
+    flex-direction: column;
+    gap: 12px ;
+    margin-top: 30px ;
+    font-family: Poppins;
+}
+
+.item{
+    border-bottom: 1.5px solid transparent;
+    padding-bottom: 2px ;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.item:hover{
+    border-bottom: 1.5px solid var(--primary);
+    
+
+}
+.iconList{
+    padding: 0px ;
+    list-style: none ;
+    display: flex;
+    gap: 12px ;
+
+}
+.iconListItem{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px ;
+    height: 30px ;
+    border-radius: 4px ;
+    border: 1.5px solid var(--text-white);
+}
+.iconListItem::before{
+    content: " ";
+    position: absolute;
+    width: 30px ;
+    height: 0px ;
+    background-color: aqua;
+    border-radius: 4px ;
+    transition: 200ms;
+    top: -1px ;
+    left: -1.5px;
+}
+
+.iconListItem:hover::before{
+    height: 30px ;
+}
+
+
+.facebook::before{
+    background-color: #0866ff;
+
+}
+
+.twetter::before{
+    background-color: #1c95e7;
+
+}
+
+.insta::before{
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+
+
+}
+
+.linked::before{
+    background-color: #0073b2;
+
+}

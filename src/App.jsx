@@ -3,6 +3,7 @@ import AuthLayout from "./Layouts/auth/AuthLayout";
 import UserLayout from "./Layouts/user/UserLayout";
 import Login from "./page/auth/login/Login";
 import Signup from "./page/auth/signup/Signup";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
 
