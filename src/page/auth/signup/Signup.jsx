@@ -1,3 +1,4 @@
+import SignupForm from '../../../component/auth/Signup/SignupForm'
 import style from '../style.module.css'
 
 export default function Signup() {
@@ -5,7 +6,7 @@ export default function Signup() {
        <div className={style.container}>
          <div className="row">
          <div className={"col-6 " + style.halfStart}>
-           
+          <SignupForm/>
          </div>
          <div className={"col-6 " + style.half + " "+ style.colorHalf}>
          <div className={style.colored}>
