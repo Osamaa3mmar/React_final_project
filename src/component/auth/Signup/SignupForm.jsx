@@ -25,22 +25,14 @@ export default function SignupForm() {
     try{
       setLoading(true);
    
-    const response=await axios.post('https://ecommerce-nonde4.onrender.com/auth/signup',value);
+    const response=await axios.post('https://ecommerce-node4.onrender.com/auth/signup',value);
     console.log(response)
     if(response.status===201){
          toast.update(toastId,success);
         navigate('/');
       }
     }catch(e){
-      if(e.response.status===409){
-        toast.update(toastId, {
-          render: `Error ouccare with code : 409`,
-          type: "error",
-          isLoading: false,
-          autoClose: 3000, 
-          pauseOnHover: true
-        });
-      }
+      console.error(e)
       toast.update(toastId, {
         render: `${e.message}`,
         type: "error",
