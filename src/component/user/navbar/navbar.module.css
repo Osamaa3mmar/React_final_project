@@ -144,10 +144,10 @@ background-color: var(--primary);
 }
 .profileList{
     left: -190px;
-    bottom: -190px;
+    bottom: -195px;
     scale: 0;
     position: absolute;
-    
+    font-family: Poppins;
     margin: 0px ;
     display: flex;
     flex-direction: column;
@@ -170,7 +170,7 @@ background-color: var(--primary);
     text-decoration: none;
     gap: 16px ;
     font-family: Poppins;
-    padding: 6px ;
+    padding: 10px ;
     border-radius: 4px; 
 }
 .profileItemText{

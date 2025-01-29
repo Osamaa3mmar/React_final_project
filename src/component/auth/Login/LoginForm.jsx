@@ -21,7 +21,7 @@ export default function LoginForm() {
         console.log(response.data.token)
         localStorage.setItem('tokin',response.data.token);
         toast.update(toastId,{
-          render: "Account created Success! 🎉 (Check your Email Address)",
+          render: "Login success",
           type: "success",
           isLoading: false,
           autoClose: 3000, 
