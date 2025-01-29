@@ -5,7 +5,12 @@ import Login from "./page/auth/login/Login";
 import Signup from "./page/auth/signup/Signup";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Bounce, ToastContainer } from "react-toastify";
-
+import Home from "./page/user/Home/Home";
+import About from "./page/user/about/About";
+import Contact from "./page/user/contact/Contact";
+import Profile from "./page/user/profile/Profile";
+import Products from "./page/user/products/Products";
+import Cart from './page/user/cart/Cart';
 export default function App() {
 
   const router =createBrowserRouter([
@@ -29,8 +34,36 @@ export default function App() {
     },
     {
       path:'/user',
-      element:<UserLayout/>
-
+      element:<UserLayout/>,
+      children:[
+        {
+          index:true,
+          element:<Home/>
+        },
+        {
+          path:'home',
+          element:<Home/>
+        },
+        {
+          path:'about',
+          element:<About/>
+        },
+        {
+          path:'contact',
+          element:<Contact/>
+        },
+        {
+          path:'profile',
+          element:<Profile/>
+        },{
+        path:'products',
+        element:<Products/>
+        },
+        {
+          path:'cart',
+          element:<Cart/>
+        }
+      ]
     }
   ]);
 

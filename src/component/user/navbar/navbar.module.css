@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0px ;
+    padding: 0px ;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+.navBody{
+    
+}
+.navEnd{
+    display: flex;
+    align-items: center;
+    gap: 24px ;
+    margin: 10px ;
+    justify-content: space-between;
+}
+.searchBar{
+    padding: 10px 15px ;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    gap: 20px ;
+    border-radius: 4px ;
+    font-size: 14px ;
+}
+
+.searchInput{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: fit-content;
+    
+}
+
+.searchIcon{
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.searchIcon:hover{
+    color: var(--primary);
+}
+
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px ;
+}
+
+.icon{
+    
+    padding: 8px ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    width: 20px ;
+    height: 20px ;
+    transition: 300ms;
+}
+
+.activeCicle{
+    padding: 6px ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    width: 20px ;
+    height: 20px ;
+    transition: 300ms;
+    color: #f5f5f5;
+background-color: var(--primary);
+}
+.cartCount{
+    position: absolute;
+    z-index: 2;
+    color: #f5f5f5;
+    background-color: var(--primary);
+    width: 15px ;
+    height: 15px ;
+    border-radius: 50%;
+    padding: 10px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -10px ;
+    right: -5px;
+     font-size: 12px; 
+}
+.cart{
+    position: relative;
+    color: black;
+}
+.icon:hover{
+color: #f5f5f5;
+background-color: var(--primary);
+}
+.navBtn{
+    padding-left:20px !important;
+    padding-right:20px !important;
+    margin: 4px;
+    border-radius: 5px ;
+    font-family: Poppins;
+    font-weight: 500 !important;
+    transition: 300ms !important;
+}
+.navBtn:hover{
+    color: var(--primary) !important;
+    text-decoration: underline;
+}
+.active{
+    padding-left:20px !important;
+    padding-right:20px !important;
+    margin: 4px;
+    border-radius: 5px ;
+    font-family: Poppins;
+    font-weight: 500 !important;
+    transition: 400ms !important;
+    background-color: var(--primary) !important;
+    color: white !important;
+}
+.active:hover{
+    scale: 1.05;
+    
+}
+
+
+.profileContainer{
+    
+    position: relative;
+    transition-delay:200ms;
+}
+.profileContainer:hover .profileList{
+    scale: 1;
+    transition-delay:0s ;
+}
+.profileList{
+    left: -190px;
+    bottom: -190px;
+    scale: 0;
+    position: absolute;
+    
+    margin: 0px ;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 20px ; 
+    list-style: none;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(50px);
+    gap: 13px ;
+    transition: 400ms;
+    transition-delay:200ms ;
+
+}
+
+.profileItem{
+    display: flex;
+    align-items: center;
+    width: 200px ;
+    color: #f5f5f5;
+    text-decoration: none;
+    gap: 16px ;
+    font-family: Poppins;
+    padding: 6px ;
+    border-radius: 4px; 
+}
+.profileItemText{
+    margin: 0px;
+}
+.profileItem:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
