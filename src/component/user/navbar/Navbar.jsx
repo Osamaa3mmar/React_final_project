@@ -12,9 +12,25 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, useLocation } from "react-router-dom";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import style from "./navbar.module.css";
+import { toast } from "react-toastify";
 export default function MyNavbar() {
   const path = useLocation();
+  
+  const commingSoonAlert=()=>{
+    
+    const toastId = toast.loading("d");
 
+    toast.update(toastId,{
+              render: "Comming soon !",
+              type: "info",
+              isLoading: false,
+              autoClose: 3000, 
+              pauseOnHover: true,
+              closeButton:'true',
+              position: "bottom-right",
+              draggable: true,
+            })
+  }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -77,7 +93,7 @@ export default function MyNavbar() {
               </label>
             </div>
             <div className={style.icons}>
-              <Link className="text-dark" to={"/user/favorate"}>
+              <Link className="text-dark" to={"/user"} onClick={commingSoonAlert} >
                 <FontAwesomeIcon
                   className={
                     path.pathname == "/user/favorate"

@@ -1,0 +1,31 @@
+.loadingBody{
+    background-color:rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.loader{
+    background-color: var(--primary);
+    width: 150px ;
+    height: 150px ;
+    position: relative;
+    border-radius: 50%;
+    scale: 0.5;
+    animation-name: inner;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+}
+@keyframes inner {
+    0%{
+
+    }
+    100%{
+        background:rgba(255, 255, 255,0.1);
+        scale: 1;
+    }
+    
+}
