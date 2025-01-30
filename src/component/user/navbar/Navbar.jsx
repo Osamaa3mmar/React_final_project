@@ -3,14 +3,13 @@ import {
   faArrowRightFromBracket,
   faBriefcase,
   faCartShopping,
-  faHeart,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons"; // Import specific icons
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useLocation } from "react-router-dom";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import style from "./navbar.module.css";
 import { toast } from "react-toastify";
 export default function MyNavbar() {
@@ -33,6 +32,7 @@ export default function MyNavbar() {
   }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
+      
       <Container>
         <Navbar.Brand as={Link} to={"/user"}>
           React-Bootstrap
@@ -44,7 +44,8 @@ export default function MyNavbar() {
               as={Link}
               className={
                 (path.pathname == "/user/home" ||path.pathname == "/user") ? style.active : style.navBtn
-              }
+              } 
+              
               to={"/user/home"}
             >
               Home

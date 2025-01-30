@@ -1,7 +1,7 @@
-import Test from '../../../component/Test'
-import Loading from '../../../component/user/loading/Loading'
+import ProductContainer from '../../../component/user/ProducrContainer/ProductContainer'
 export default function Home() {
   return (
-    <Test/>
-  )
+<>
+
+</>  )
 }

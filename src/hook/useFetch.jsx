@@ -11,13 +11,11 @@ export default function useFetch(url) {
     const getData=async()=>{
         try{
         const {data}=await axios.get(url);
-        console.log(data);
         setError(null);
         setData(data);
         }catch(e){
             setError(e.message);
             setData(null);
-            console.log(e);
         }
         finally{
             setLoading(false);

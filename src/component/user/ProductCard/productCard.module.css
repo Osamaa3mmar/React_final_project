@@ -1,0 +1,194 @@
+*{
+    font-family: Poppins;
+}
+
+.card{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    max-width: 290px ;
+    margin:  auto;
+    margin-bottom:60px ;
+    overflow: hidden;
+    border-radius: 12px 12px 6px 6px;
+}
+
+.card:hover .title{
+    color: var(--primary);
+}
+.card:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+}
+.card:hover .iconContainer,
+.card:hover .btnContainer{
+    transform: translate(0px);
+}
+.card:hover img{
+    scale: 1.2;
+    transform: rotate(-10deg);
+   
+}
+.card:hover .imageCard::after{
+    height: 100%;
+   
+}
+.imageCard{
+    background-color: #f5f5f5;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 270px ;
+    overflow: hidden;
+    border-radius: 12px 12px 0px 0px  ;
+}
+.imageCard::after{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100% ;
+    height: 0% ;
+    content: " ";
+    bottom: 0px ;
+    right: 0px ;
+    position: absolute;
+    transition: 300ms;
+
+}
+.imageCard img{
+    width: 80%;
+    transition: 800ms;
+    transition-timing-function: ease;
+
+}
+.hoverdIcon{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 17px ;
+    right: 17px ;
+    gap: 10px ;
+    z-index: 2;
+}
+.discount{
+    position: absolute;
+    top: 17px ;
+    left: 17px ;
+    background-color: var(--primary);
+    margin: 0px ;
+    padding: 0px ;
+    z-index: 2;
+    padding: 4px 12px ;
+    border-radius:4px;
+}
+.discount p {
+    margin: 0px ;
+    margin: auto;
+    color: white;
+}
+.iconContainer{
+    background-color: white;
+    width: 35px ;
+    height: 35px ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 600ms;
+    transform: translate(100px );
+    
+}
+.iconContainer:hover .icon{
+    color: var(--primary) !important;
+}
+.icon{
+    transition: 300ms;
+
+   color: #222;
+   font-size: 22px ;   
+}
+
+.cardBody{
+    margin-top: 16px ;
+    display: flex;
+    flex-direction: column;
+    gap: 10px ;
+    padding: 0px 10px ;
+    padding-bottom: 15px ;
+}
+.title
+{
+    font-weight: 700;
+    margin: 0px;
+    cursor: pointer;
+    transition: 200ms;
+    font-size: 20px ;
+}
+
+
+.price{
+    display: flex;
+    align-items: end;
+    gap: 12px ;
+    font-weight: 500;
+
+}
+.after{
+    color: var(--primary);
+    font-size: 18px ;
+    margin: 0px ;
+    cursor: pointer;
+}
+.before{
+    color: gray;
+    font-size: 14px ;
+    text-decoration: line-through;
+    margin: 0px ;
+}
+
+
+.rate{
+    display: flex;
+    align-items: center;
+    gap: 10px ;
+}
+.rateNumber{
+    margin: 0px ;
+}
+
+.coloredStar{
+    color: gold;
+    
+}
+
+.star{
+    color: rgba(128, 128, 128, 0.6);
+}
+.btnContainer{
+    position: absolute;
+    bottom: 0px ;
+    width: 100%;
+    background-color: black;
+    padding: 6px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transform: translate(0px,100px  );
+    transition: 500ms;
+}
+.btnContainer:hover .btn{
+color: var(--primary);
+}
+.btn{
+    color: white;
+    transition: 300ms;
+    background-color: transparent;
+    border: none;
+    font-family: inter;
+    font-weight: 600;
+    font-size: 20px ;
+}
