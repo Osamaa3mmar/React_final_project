@@ -11,6 +11,10 @@ import Contact from "./page/user/contact/Contact";
 import Profile from "./page/user/profile/Profile";
 import Products from "./page/user/products/Products";
 import Cart from './page/user/cart/Cart';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 export default function App() {
 
   const router =createBrowserRouter([

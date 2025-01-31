@@ -30,6 +30,14 @@ export default function MyNavbar() {
               draggable: true,
             })
   }
+
+
+
+
+  const removeToken=()=>{
+    localStorage.removeItem('tokin');
+    
+  }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       
@@ -138,7 +146,7 @@ export default function MyNavbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to={""} className={"text-danger "+style.profileItem}>
+                    <Link to={"/"} onClick={removeToken} className={"text-danger "+style.profileItem}>
                     <FontAwesomeIcon icon={faArrowRightFromBracket}/>
                     <p className={style.profileItemText}>Logout</p>
                     </Link>
