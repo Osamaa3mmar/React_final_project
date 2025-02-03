@@ -1,0 +1,107 @@
+.list{
+    list-style: none;
+    margin: 0px ;
+    padding: 100px 10px  ;
+    border-right: 1px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 15px ;
+    height: 100%;
+}
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:6px 10px  ;
+    border-radius: 6px ;
+    transition: 200ms;
+}
+.item:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.item:hover .itemIcon{
+    opacity: 1;
+    transform: translate(0px );
+    scale: 1.3;
+}
+
+.itemIcon{
+    opacity: 0;
+    transform: translate(-40px );
+    scale: 0.4;
+    transition: 300ms;
+
+}
+.itemName{
+    flex-grow: 1;
+    text-decoration: none;
+    color: black;
+    font-size: 16px ;
+    text-transform: capitalize;
+}
+
+.swiper{
+    width: 85%;
+    margin: auto;
+}
+
+.swipeElement{
+    background-color: black;
+    border-radius: 10px ;
+    overflow: hidden;
+    
+}
+.logo p{
+    margin: 0px ;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+.apple{
+    font-size: 80px ;
+    color: white;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.content{
+    display: flex;
+    gap:22px  ;
+    flex-direction: column;
+    padding: 50px 40px  ;
+}
+
+
+.content h2{
+    color: white;
+
+}
+
+
+.shop{
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    width: fit-content;
+    padding: 0px 0px 6px 0px ;
+    transition: 300ms;
+    display: flex;
+    align-items: center;
+    gap: 15px ;
+}
+
+.shop:hover{
+    border-color: aliceblue;
+}
+
+
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

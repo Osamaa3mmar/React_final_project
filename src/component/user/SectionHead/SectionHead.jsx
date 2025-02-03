@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import style from './sectionHead.module.css'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-export default function SectionHead({title ,type,subtitle,url}) {
+export default function SectionHead({title ,type,subtitle}) {
   return (
     <div className={style.container}>
         <div className={style.start}>
@@ -18,10 +18,11 @@ export default function SectionHead({title ,type,subtitle,url}) {
         </div>
         <div className={style.end}>
             {type=="btn"?<Link to={"/user/products"} className={style.btn}>View All</Link>:
-            <div className={style.arrows}>
+            ""}
+            {type=="arrow"?<div className={style.arrows}>
                 <FontAwesomeIcon className={style.arrow} icon={faArrowLeft} />
                 <FontAwesomeIcon className={style.arrow} icon={faArrowRight} />
-                </div>}
+                </div>:''}
         </div>
     
     </div>

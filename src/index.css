@@ -12,3 +12,13 @@
     --text-gray:#7a7a7a;
     --gray-background:#F5F5F5;
 }
+.swiper-pagination{
+    bottom: -35px !important;
+
+}
+
+.swiper-pagination-bullet{
+    background-color: var(--primary) !important;
+    width: 10px !important;
+    height: 10px !important;
+}

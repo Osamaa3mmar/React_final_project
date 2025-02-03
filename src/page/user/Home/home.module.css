@@ -1,0 +1,20 @@
+.view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.viewALlBtn{
+    text-decoration: none;
+    color: #f5f5f5;
+    background-color: var(--primary);
+    font-family: Poppins;
+    font-size: 20px ;
+    padding: 15px ;
+    border-radius: 4px; 
+    transition: 300ms;
+}
+.viewALlBtn:hover{
+    background-color: #c03d3d;
+}

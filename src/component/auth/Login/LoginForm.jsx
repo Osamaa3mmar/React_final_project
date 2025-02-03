@@ -16,7 +16,6 @@ export default function LoginForm() {
     setLoading(true);
     try{
       const response=await axios.post('https://ecommerce-node4.onrender.com/auth/signin',value);
-      console.log(response);
       if(response.status===200){
         console.log(response.data.token)
         localStorage.setItem('tokin',response.data.token);
@@ -32,15 +31,23 @@ export default function LoginForm() {
       }
     }
     catch(e){
-      console.log(e);
-      toast.update(toastId,{
-        render: e.response.data.message,
-        type: "error",
-        isLoading: false,
-        autoClose: 3000, 
-        pauseOnHover: true,
-        closeButton:'true'
-      })
+      if (e.response) {
+        // Server responded with an error status
+        toast.update(toastId, {
+          render: e.response.data.message,
+          type: "error",
+          isLoading: false,
+          autoClose: 3000, 
+          pauseOnHover: true,
+          closeButton: true
+        });
+      } else {
+        
+        toast.dismiss(toastId);
+        toast.error("Network error, please try again later.", {
+          autoClose: 3000
+        });
+      }
     }
     finally{
       setLoading(false);
@@ -65,7 +72,8 @@ export default function LoginForm() {
             <input type="password" {...register('password')} required id='password' className={style.realInput} />
         </div>
         <div className={style.submitBtn}>
-        <input type="submit"className={style.in} value={loading?"Loading...":"Login"}  />
+          {loading?<button disabled className={style.in}>Loading...</button>:<input type="submit"className={style.in} value={"Login"}  />}
+        
         <FontAwesomeIcon icon={faRightLong} />
 
         </div>

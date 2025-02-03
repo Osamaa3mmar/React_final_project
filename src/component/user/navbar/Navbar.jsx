@@ -8,7 +8,7 @@ import {
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import style from "./navbar.module.css";
 import { toast } from "react-toastify";
@@ -31,15 +31,15 @@ export default function MyNavbar() {
             })
   }
 
-
+  const navigate=useNavigate();
 
 
   const removeToken=()=>{
     localStorage.removeItem('tokin');
-    
+    navigate("/")
   }
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className={style.navborder}>
       
       <Container>
         <Navbar.Brand as={Link} to={"/user"}>

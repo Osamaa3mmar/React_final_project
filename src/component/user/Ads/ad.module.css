@@ -1,0 +1,32 @@
+.container{
+    position: relative;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    padding: 20px ;
+   
+}
+.float{
+    position: absolute;
+    bottom:0px;
+    left: 0px ;
+    padding: 40px ;
+}
+.float p{
+    margin-bottom: 40px ;
+    color: white;
+    text-wrap: wrap;
+    width: 70%;
+    margin-top: 22px ;
+    font-family: inter;
+}
+
+
+.float h4{
+    color: white;
+    font-size: 34px ;
+    font-family: Poppins;
+}

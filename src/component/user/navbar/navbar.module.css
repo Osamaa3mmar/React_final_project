@@ -180,3 +180,7 @@ background-color: var(--primary);
 .profileItem:hover{
     background: rgba(0, 0, 0, 0.2);
 }
+
+.navborder{
+    border-bottom: 1.5px solid black !important;
+}

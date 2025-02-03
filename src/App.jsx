@@ -15,6 +15,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Product from "./page/user/product/Product";
 export default function App() {
 
   const router =createBrowserRouter([
@@ -44,6 +45,7 @@ export default function App() {
           index:true,
           element:<Home/>
         },
+       
         {
           path:'home',
           element:<Home/>
@@ -61,12 +63,21 @@ export default function App() {
           element:<Profile/>
         },{
         path:'products',
-        element:<Products/>
+        element:<Products/>,
         },
         {
           path:'cart',
           element:<Cart/>
-        }
+        },
+        {
+          path:'category/:catId',
+          element:<div>here</div>
+        },
+          {
+            path:'product/:id',
+            element:<Product/>
+          }
+        
       ]
     }
   ]);
