@@ -7,8 +7,8 @@ export default function ProductDetaiels({subImages,mainImage,name,reviews,finalP
   return (
     <div>
       <Row className="g-4">
-        <Col lg={7} md={12} sm={12}>
-        {subImages && subImages.length>0?<div className="subs">
+        <Col lg={7} md={12} sm={12}className={style.imgCont}>
+        {subImages && subImages.length>0?<div className={style.subs}>
           {subImages.map((img)=>{
             return <div key={img.public_id}> <img src={img.secure_url} alt="" className="subImg" /></div>
           })}

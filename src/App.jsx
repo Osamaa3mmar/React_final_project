@@ -16,6 +16,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Product from "./page/user/product/Product";
+import SendCode from "./page/auth/sendcode/SendCode";
 export default function App() {
 
   const router =createBrowserRouter([
@@ -34,6 +35,9 @@ export default function App() {
         {
           path:'signup',
           element:<Signup/>
+        },{
+          path:'forget',
+          element:<SendCode/>
         }
       ]
     },

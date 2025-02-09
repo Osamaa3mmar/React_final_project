@@ -82,9 +82,7 @@ export default function Login() {
 <path d="M235.558 300.87H132.581V302.342H235.558V300.87Z" fill="#DB4444"/>
 <path d="M162.003 287.617H160.532V301.238H162.003V287.617Z" fill="#DB4444"/>
 <path d="M206.871 287.617H205.4V301.238H206.871V287.617Z" fill="#DB4444"/>
-</svg>
-
-
+      </svg>
       </div>
       </div>
     </div>

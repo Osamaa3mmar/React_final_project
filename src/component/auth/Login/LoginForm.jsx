@@ -66,8 +66,9 @@ export default function LoginForm() {
         <div className={style.formInput}>
             <div className={style.paswordContainer}>
             <label htmlFor="password" className={style.formLabel}>Password</label>
+            <Link style={{textDecoration:'none'} } to={'/forget'}>
             <p className={style.para} style={{fontSize:"10px",color:"var(--primary)" }}>Forgot Password ?</p>
-
+            </Link>
             </div>
             <input type="password" {...register('password')} required id='password' className={style.realInput} />
         </div>
