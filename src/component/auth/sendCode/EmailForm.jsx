@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 export default function EmailForm() {
+    const navigate=useNavigate();
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const [email,setEmail]=useState(null);
     const {register,handleSubmit}=useForm();
@@ -16,6 +18,9 @@ export default function EmailForm() {
                 code:info.code
             })
             console.log(data);
+            toast.success("check your email");
+
+            navigate('/');
         }
         catch(e){
             toast.error(e.message);
