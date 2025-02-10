@@ -36,14 +36,7 @@ export default function ProductCard({ dellay, name, price, discount, mainImage, 
   }
 
   return (
-    <motion.div
-      custom={dellay} // Pass delay prop for staggered animation
-      variants={itemVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
-      className="col-lg-3 col-md-4 col-sm-6 rev"
-    >
+   
       <div className={'shadow ' + style.card}>
         <div className={style.imageCard}>
           <img src={mainImage.secure_url} alt="" />
@@ -82,6 +75,6 @@ export default function ProductCard({ dellay, name, price, discount, mainImage, 
           </div>
         </div>
       </div>
-    </motion.div>
+   
   );
 }

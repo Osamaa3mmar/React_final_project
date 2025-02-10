@@ -1,0 +1,160 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    flex-direction: column;
+    
+}
+
+.emailForm{
+    background-color: #f5f5f5;
+    padding: 25px;
+    border-radius: 10px 10px 0px 0px ;
+    display: flex;
+    align-items: center;
+    width: max(40%,450px );
+}
+.emailForm .input{
+    border-radius: 10px 0px 0px 0px !important;
+}
+.sendEmailBtn,.sendEmailBtnDis{
+    border: none;
+    background-color: var(--primary);
+    height: 100%;
+    padding: 4px 8px ;
+    color: white;
+    border-radius: 0px 10px 0px 0px ;
+    font-family: inter;
+    font-size: 18px ;
+    font-weight: 700;
+    transition: 300ms;
+}
+
+
+.sendEmailBtnDis{
+    text-decoration: line-through;
+    background-color: gray;
+}
+.sendEmailBtn:hover {
+    background-color: #c53f3f;
+    outline: #c53f3f41 5px solid;
+}
+
+.input{
+    font-family: poppins;
+    padding: 4px 10px ;
+    width: 100%;
+    padding: 10px;
+    border-radius:10px 10px 0px 0px  ;
+    border: none;
+    outline: none;
+    transition: 300ms;
+}
+
+.codeInput{
+    width: 70px ;
+    height: 70px ;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 700;
+    font-family: inter;
+    font-size: 30px;
+    color: var(--primary);
+    border: none;
+    outline: none;
+    transition: 300ms;
+    box-shadow: 5px  5px 10px rgba(0, 0, 0, 0.3);
+}
+.code{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px ;
+}
+
+.codeInput:focus{
+outline: var(--primary) solid 2px;
+opacity: 1 !important;
+
+}
+.codeInput:valid{
+    outline: var(--primary) solid 4px;
+    opacity: 0.4;
+
+}
+
+.codeCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px ;
+}
+
+.head{
+    color: var(--primary);
+    font-size: 22px; 
+    font-weight:600;
+}
+
+
+.passCodeForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px ;
+    width: max(40%,450px );
+    background-color: #f5f5f5;
+    padding: 20px 40px ;
+    border-radius: 0px 0px 10px 10px ;
+    transform: translateY(150px);
+    transition: 1s;
+    opacity: 0;
+    
+}
+.passCodeFormActive{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.passInput{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    
+    width: 100%;
+    gap: 15px ;
+    padding: 10px ;
+
+}
+
+
+
+.pass{
+display: flex;
+align-items: center;
+width: 100%;
+}
+
+
+.pass .input{
+    border-radius: 10px 0px 0px 0px !important;
+}
+.eyeIcon{
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: var(--primary);
+cursor: pointer;
+height: 100%;
+padding: 0px 15px ;
+border-radius: 0px 10px 0px 0px;
+transition: 100ms;
+}
+.eyeIcon:hover{
+    background-color: #c53f3f;
+    outline: #c53f3f41 3px solid;
+}
+.icon {
+    color: white;
+    font-size: 20px; 
+}

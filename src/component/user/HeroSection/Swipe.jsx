@@ -14,10 +14,10 @@ export default function Swipe() {
     <Swiper
       spaceBetween={50}
       slidesPerView={1}
-      modules={[EffectFlip,Pagination]}
+      modules={[Pagination]}
       pagination={{ clickable: true }}
 
-      effect='flip'
+      
       className={style.swiper}
     >
       
