@@ -1,6 +1,106 @@
 .imgCont{
     display: flex;
     align-items: flex-start;
-    
+    height: 600px;
+    gap: 50px ;
+    padding: 30px 0px ;
 }
 
+.subs{
+    width: 20%;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 20px ;
+    height: 600px;
+    padding: 10px 10px ;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 10px ;
+}
+.subs img{
+    width: 100%;
+
+}
+.subs::-webkit-scrollbar {
+    width: 4px; 
+}
+
+.subs::-webkit-scrollbar-track {
+    background: rgba(128, 128, 128, 0.1); 
+    border-radius: 10px;
+}
+
+.subs::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.subs::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.imgg{
+    
+    height: 200px ;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 200ms;
+    border-radius: 4px; 
+}
+
+.imgg:hover{
+   outline: 2px var(--primary) solid;
+    transform: scale(1.06);
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-grow: 1;
+    
+    overflow: hidden;
+}
+
+.main img{
+    width: 100%;
+    transition: 400ms;
+}
+
+.main img:hover{
+    scale: 0.8;
+}
+
+.name
+{
+    color: var(--Text2, #000);
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+}
+.review{
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+.review p{
+    margin: 0px ;
+}
+.reviewCount{
+    color: var(--Text2, #000);
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px; 
+}
+
+.infoCont{
+    padding: 30px ;
+}

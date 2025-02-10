@@ -4,11 +4,36 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion'; // Import motion from framer-motion
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 export default function ProductCard({ dellay, name, price, discount, mainImage, finalPrice, reviews, _id, avgRating }) {
   const rate = Math.round(avgRating);
   const stars = [];
-
+  const addToCart=async()=>{
+    const toastid=toast.loading(" adding to cart . . . ");
+    const token=localStorage.getItem("token");
+    try{
+      const {data}=await axios.post('https://ecommerce-node4.onrender.com/cart',{
+        productId:_id
+      },
+      {
+        headers:{
+          Authorization:`Tariq__${token}`
+        }
+      }
+    )
+      toast.success("Added to cart successfully!");
+      console.log(data)
+    }
+    catch(e){
+      toast.error(e.response.data.message);
+      
+    }
+    finally{
+      toast.dismiss(toastid);
+    }
+  }
   // Animation variants for Framer Motion
   const itemVariants = {
     hidden: { opacity: 0, x: -200, scale: 0.5 },
@@ -41,7 +66,7 @@ export default function ProductCard({ dellay, name, price, discount, mainImage, 
         <div className={style.imageCard}>
           <img src={mainImage.secure_url} alt="" />
           <div className={style.btnContainer}>
-            <button className={style.btn}>Add To Cart</button>
+            <button className={style.btn} onClick={addToCart}>Add To Cart</button>
           </div>
           {discount > 0 ? (
             <div className={style.discount}>

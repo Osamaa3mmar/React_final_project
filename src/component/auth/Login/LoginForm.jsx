@@ -18,7 +18,7 @@ export default function LoginForm() {
       const response=await axios.post('https://ecommerce-node4.onrender.com/auth/signin',value);
       if(response.status===200){
         console.log(response.data.token)
-        localStorage.setItem('tokin',response.data.token);
+        localStorage.setItem('token',response.data.token);
         toast.update(toastId,{
           render: "Login success",
           type: "success",

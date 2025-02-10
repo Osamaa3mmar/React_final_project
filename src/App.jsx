@@ -17,6 +17,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Product from "./page/user/product/Product";
 import SendCode from "./page/auth/sendcode/SendCode";
+import Protected from "./component/user/protected/Protected";
 export default function App() {
 
   const router =createBrowserRouter([
@@ -43,35 +44,44 @@ export default function App() {
     },
     {
       path:'/user',
-      element:<UserLayout/>,
+      element:
+      <Protected>
+        <UserLayout/>
+        </Protected>
+        ,
       children:[
         {
           index:true,
-          element:<Home/>
+          element:
+          <Protected>
+            <Home/>
+            </Protected>
         },
        
         {
           path:'home',
-          element:<Home/>
+          element:<Protected>
+          <Home/>
+    </Protected>
         },
         {
           path:'about',
-          element:<About/>
+          element: <Protected><About/></Protected>
         },
         {
           path:'contact',
-          element:<Contact/>
+          element:<Protected><Contact/></Protected>
         },
         {
           path:'profile',
-          element:<Profile/>
+          element:<Protected><Profile/></Protected>
         },{
         path:'products',
-        element:<Products/>,
+        element:<Protected><Products/></Protected>,
         },
         {
           path:'cart',
-          element:<Cart/>
+          element:<Protected><Cart/></Protected>
         },
         {
           path:'category/:catId',
@@ -79,7 +89,7 @@ export default function App() {
         },
           {
             path:'product/:id',
-            element:<Product/>
+            element:<Protected><Product/></Protected>
           }
         
       ]
