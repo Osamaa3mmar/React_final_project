@@ -35,7 +35,7 @@ export default function MyNavbar() {
 
 
   const removeToken=()=>{
-    localStorage.removeItem('tokin');
+    localStorage.removeItem('token');
     navigate("/")
   }
   return (

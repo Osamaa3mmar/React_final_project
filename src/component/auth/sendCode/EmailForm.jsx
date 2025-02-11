@@ -23,6 +23,11 @@ export default function EmailForm() {
         passForm.current.classList.add(style.passCodeFormActive)
     }
     const sendPass=async (info)=>{
+        if(info.confirmPassword!=info.newPassword)
+        {
+            toast.error("the password is not the same in confirm password field");
+        }
+        else{
         const toastLoading=toast.loading('processing . . . ');
         try{
             console.log(`${info.code1}${info.code2}${info.code3}${info.code4}`)
@@ -32,7 +37,7 @@ export default function EmailForm() {
                 code:`${info.code1}${info.code2}${info.code3}${info.code4}`
             })
             console.log(data);
-            toast.success("check your email");
+            toast.success("Password change successful !");
             navigate('/');
         }
         catch(e){
@@ -41,6 +46,7 @@ export default function EmailForm() {
         finally{
             toast.dismiss(toastLoading);
         }
+    }
     }
     const sendCode=async(info)=>{
         if(emailRegex.test(info.email)){
