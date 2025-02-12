@@ -3,14 +3,16 @@ import style from './productCard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'framer-motion'; // Import motion from framer-motion
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { useState } from 'react';
 
 export default function ProductCard({ dellay, name, price, discount, mainImage, finalPrice, reviews, _id, avgRating }) {
   const rate = Math.round(avgRating);
   const stars = [];
+  const [click,setClick]=useState(false);
   const addToCart=async()=>{
+    setClick(true);
     const toastid=toast.loading(" adding to cart . . . ");
     const token=localStorage.getItem("token");
     try{
@@ -31,25 +33,11 @@ export default function ProductCard({ dellay, name, price, discount, mainImage, 
       
     }
     finally{
+      setClick(false);
       toast.dismiss(toastid);
     }
   }
-  // Animation variants for Framer Motion
-  const itemVariants = {
-    hidden: { opacity: 0, x: -200, scale: 0.5 },
-    visible: (dellay) => ({
-      opacity: 1,
-      x: 0,
-      scale:1,
-      transition: {
-        delay: dellay * 0.1, // Use the delay passed as prop (dellay)
-        duration: 0.5,
-        ease: 'easeOut'
-      }
-    })
-  };
 
-  // Loop to create star icons
   for (let i = 0; i < 5; i++) {
     stars.push(
       <FontAwesomeIcon
@@ -66,7 +54,7 @@ export default function ProductCard({ dellay, name, price, discount, mainImage, 
         <div className={style.imageCard}>
           <img src={mainImage.secure_url} alt="" />
           <div className={style.btnContainer}>
-            <button className={style.btn} onClick={addToCart}>Add To Cart</button>
+            <button className={style.btn} onClick={click? null:addToCart}>Add To Cart</button>
           </div>
           {discount > 0 ? (
             <div className={style.discount}>
