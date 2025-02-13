@@ -15,6 +15,7 @@
     gap: 24px ;
     margin: 10px ;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .searchBar{
     padding: 10px 15px ;
@@ -161,7 +162,11 @@ background-color: var(--primary);
     transition-delay:200ms ;
     z-index: 200;
 }
-
+@media screen and (max-width: 768px) {
+    .profileList{
+        left: -100px ;
+    }
+}
 .profileItem{
     display: flex;
     align-items: center;
@@ -183,4 +188,10 @@ background-color: var(--primary);
 
 .navborder{
     border-bottom: 1.5px solid black !important;
+}
+
+.avatar{
+    width: 36px;
+    height: 36px ;
+    border-radius: 50%;
 }

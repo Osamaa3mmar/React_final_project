@@ -12,9 +12,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import style from "./navbar.module.css";
 import { toast } from "react-toastify";
+import { useContext } from "react";
+import  { CartContext } from "../Cart/CartContext/CartContext";
+import { UserContext } from "../userContext/UserContext";
+import { img } from "framer-motion/client";
 export default function MyNavbar() {
-  const path = useLocation();
+    const {user}=useContext(UserContext);
   
+  const path = useLocation();
+  const {cartCount}=useContext(CartContext);
   const commingSoonAlert=()=>{
     
     const toastId = toast.loading("d");
@@ -113,7 +119,7 @@ export default function MyNavbar() {
                 />
               </Link>
               <Link to={"/user/cart"} className={style.cart}>
-                <span className={style.cartCount}>5</span>
+                <span className={style.cartCount}>{cartCount}</span>
                 <FontAwesomeIcon
                   className={
                     path.pathname == "/user/cart"
@@ -124,6 +130,7 @@ export default function MyNavbar() {
                 />
               </Link>
               <div className={style.profileContainer}>
+                {user?<img className={style.avatar} src={user.image.secure_url}/>:
                 <FontAwesomeIcon
                   className={
                     path.pathname == "/user/profile"
@@ -131,10 +138,10 @@ export default function MyNavbar() {
                       : style.icon + " " + style.profile
                   }
                   icon={faUser}
-                />
+                />}
                 <ul className={style.profileList}>
                   <li>
-                    <Link to={""} className={style.profileItem}>
+                    <Link to={"/user/profile"} className={style.profileItem}>
                     <FontAwesomeIcon icon={faUser}/>
                     <p className={style.profileItemText}>Profile</p>
                     </Link>

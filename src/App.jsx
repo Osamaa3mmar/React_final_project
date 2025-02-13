@@ -18,6 +18,9 @@ import 'swiper/css/scrollbar';
 import Product from "./page/user/product/Product";
 import SendCode from "./page/auth/sendcode/SendCode";
 import Protected from "./component/user/protected/Protected";
+import CartContextProvider, { CartContext } from "./component/user/Cart/CartContext/CartContext";
+import UserContextProvider, { UserContext } from "./component/user/userContext/UserContext";
+import ProfileMain from "./component/user/Profile/ProfileMain";
 export default function App() {
 
   const router =createBrowserRouter([
@@ -46,7 +49,11 @@ export default function App() {
       path:'/user',
       element:
       <Protected>
-        <UserLayout/>
+        <UserContextProvider>
+       <CartContextProvider>
+       <UserLayout/>
+       </CartContextProvider>
+       </UserContextProvider>
         </Protected>
         ,
       children:[
@@ -81,7 +88,11 @@ export default function App() {
         },
         {
           path:'cart',
-          element:<Protected><Cart/></Protected>
+          element:<Protected>
+            
+            <Cart/>
+           
+            </Protected>
         },
         {
           path:'category/:catId',
@@ -90,6 +101,31 @@ export default function App() {
           {
             path:'product/:id',
             element:<Protected><Product/></Protected>
+          },
+          {
+            path:'profile',
+            element:<Protected>
+              
+              <Profile/>
+              
+              </Protected>,
+            children:[
+              {
+                index:true,
+                element:<Protected> <ProfileMain/></Protected>
+              },
+              {
+                path:'edit',
+                element:<Protected>
+                  
+                </Protected>
+              },{
+                path:'main',
+                element:<Protected>
+                  <ProfileMain/>
+                </Protected>
+              }
+            ]
           }
         
       ]
@@ -99,7 +135,7 @@ export default function App() {
   return (
     <div className="">
       <ToastContainer
-position="top-right"
+position="top-left"
 autoClose={5000}
 hideProgressBar={false}
 newestOnTop={false}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Bottom from "../../../component/user/Cart/BottomSection/Bottom";
 import CartTable from "../../../component/user/Cart/Table/CartTable";
 import style from './Cart.module.css'
@@ -7,11 +7,14 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import empty from '../.././../public/cart/empty-cart.png'
+import { CartContext } from "../../../component/user/Cart/CartContext/CartContext";
 export default function Cart() {
   const [data,setData]=useState(null);
   const [error,setError]=useState(null);
   const [loading,setLoading]=useState(true);
+  const {cartCount,setCartCount}=useContext(CartContext);
   const removeItem=async(id)=>{
+    
     try{
      const tId=toast.loading("Removing Item . . .");
       await axios.patch(
@@ -24,10 +27,11 @@ export default function Cart() {
                 Authorization: `Tariq__${localStorage.getItem('token')}`
             }
         }
+        
+
     );
-      
-      setData({...data,products:data.products.filter((item)=>{return item.productId !=id})});
-      
+    setCartCount(prev=>prev==0?0:prev-1);
+      setData(prevdata=>({...prevdata,products:prevdata.products.filter((item)=>{return item.productId !=id})}));
       toast.dismiss(tId);
       toast.success("Item Deleted !");
     }
@@ -37,8 +41,7 @@ export default function Cart() {
     finally{
       setLoading(false);
     }
-  } 
-
+  }
   const clearCart=async ()=>{
     setLoading(true);
     try{
@@ -52,6 +55,7 @@ export default function Cart() {
             }
         }
     );
+      setCartCount(0);
       toast.success("Cart Empty Now ")
       setData({count:0,products:[]});
       setError(null);
@@ -105,7 +109,7 @@ export default function Cart() {
           <Link className={style.btn}to={'/user'}>Return To Shop</Link>
           <button className={style.btn} onClick={clearCart} >Clear Cart</button>
         </div>
-        <Bottom data={data} />
+        
       </span>
       :data.products.length==0?<div className={style.empty}><img src={empty}/>
       <p> Your Cart <span>Empty</span> </p>

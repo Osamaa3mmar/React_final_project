@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../Cart/CartContext/CartContext';
 
-export default function ProductCard({ dellay, name, price, discount, mainImage, finalPrice, reviews, _id, avgRating }) {
+export default function ProductCard({ name, price, discount, mainImage, finalPrice, reviews, _id, avgRating }) {
   const rate = Math.round(avgRating);
   const stars = [];
   const [click,setClick]=useState(false);
+  const {cartCount,setCartCount}=useContext(CartContext);
+
   const addToCart=async()=>{
     setClick(true);
     const toastid=toast.loading(" adding to cart . . . ");
@@ -25,6 +28,8 @@ export default function ProductCard({ dellay, name, price, discount, mainImage, 
         }
       }
     )
+    console.log(cartCount)
+    setCartCount(prev=>prev+1)
       toast.success("Added to cart successfully!");
       console.log(data)
     }
