@@ -15,9 +15,8 @@ import { toast } from "react-toastify";
 import { useContext } from "react";
 import  { CartContext } from "../Cart/CartContext/CartContext";
 import { UserContext } from "../userContext/UserContext";
-import { img } from "framer-motion/client";
 export default function MyNavbar() {
-    const {user}=useContext(UserContext);
+    const {userImage}=useContext(UserContext);
   
   const path = useLocation();
   const {cartCount}=useContext(CartContext);
@@ -130,7 +129,7 @@ export default function MyNavbar() {
                 />
               </Link>
               <div className={style.profileContainer}>
-                {user?<img className={style.avatar} src={user.image.secure_url}/>:
+                {userImage?<img className={`${style.avatar} ${ path.pathname === "/user/profile/main"?style.avatarActive:''}`} src={userImage}/>:
                 <FontAwesomeIcon
                   className={
                     path.pathname == "/user/profile"

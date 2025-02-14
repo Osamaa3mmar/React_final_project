@@ -194,4 +194,11 @@ background-color: var(--primary);
     width: 36px;
     height: 36px ;
     border-radius: 50%;
+    transition: 300ms;
+    outline: 2px solid transparent
+
+}
+.avatar:hover,
+.avatarActive{
+    outline: 2px solid rgb(212, 68, 68);
 }

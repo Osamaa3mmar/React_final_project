@@ -107,6 +107,7 @@ export default function Cart() {
         <CartTable removeItem={removeItem} data={data.products}/>
         <div className={style.btns}>
           <Link className={style.btn}to={'/user'}>Return To Shop</Link>
+          <Link className={style.btn} to={'/user/cart/placeorder'}>Place Order</Link>
           <button className={style.btn} onClick={clearCart} >Clear Cart</button>
         </div>
         

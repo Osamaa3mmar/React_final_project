@@ -21,6 +21,7 @@ import Protected from "./component/user/protected/Protected";
 import CartContextProvider, { CartContext } from "./component/user/Cart/CartContext/CartContext";
 import UserContextProvider, { UserContext } from "./component/user/userContext/UserContext";
 import ProfileMain from "./component/user/Profile/ProfileMain";
+import Edit from "./page/user/profile/edit/Edit";
 export default function App() {
 
   const router =createBrowserRouter([
@@ -117,7 +118,7 @@ export default function App() {
               {
                 path:'edit',
                 element:<Protected>
-                  
+                  <Edit/>
                 </Protected>
               },{
                 path:'main',
