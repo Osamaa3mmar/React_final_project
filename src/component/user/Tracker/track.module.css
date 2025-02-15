@@ -1,0 +1,13 @@
+.cont{
+    display: flex;
+    gap: 6px ;
+    align-items: center;
+    padding: 30px 0px ;
+}
+
+.cont div p{
+    margin: 0px ;
+    font-family: Poppins;
+    font-weight: 500 ;
+    font-size: 22px ;
+}

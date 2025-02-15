@@ -18,10 +18,12 @@ import 'swiper/css/scrollbar';
 import Product from "./page/user/product/Product";
 import SendCode from "./page/auth/sendcode/SendCode";
 import Protected from "./component/user/protected/Protected";
-import CartContextProvider, { CartContext } from "./component/user/Cart/CartContext/CartContext";
-import UserContextProvider, { UserContext } from "./component/user/userContext/UserContext";
+import CartContextProvider from "./component/user/Cart/CartContext/CartContext";
+import UserContextProvider from "./component/user/userContext/UserContext";
 import ProfileMain from "./component/user/Profile/ProfileMain";
 import Edit from "./page/user/profile/edit/Edit";
+import PlaceOrder from "./page/user/PlaceOrder/PlaceOrder";
+import Orders from "./page/user/orders/Orders";
 export default function App() {
 
   const router =createBrowserRouter([
@@ -58,6 +60,10 @@ export default function App() {
         </Protected>
         ,
       children:[
+        {
+          path:'/user/cart/placeorder',
+          element:<PlaceOrder/>
+        },
         {
           index:true,
           element:
@@ -124,6 +130,11 @@ export default function App() {
                 path:'main',
                 element:<Protected>
                   <ProfileMain/>
+                </Protected>
+              },{
+                path:'orders',
+                element:<Protected>
+                  <Orders/>
                 </Protected>
               }
             ]

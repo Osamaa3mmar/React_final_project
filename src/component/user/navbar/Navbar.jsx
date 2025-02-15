@@ -146,7 +146,7 @@ export default function MyNavbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to={""} className={style.profileItem}>
+                    <Link to={"/user/profile/orders"} className={style.profileItem}>
                     <FontAwesomeIcon icon={faBriefcase} />
                     <p className={style.profileItemText}>My Order</p>
                     </Link>

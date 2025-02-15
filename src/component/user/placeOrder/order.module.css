@@ -1,0 +1,36 @@
+
+.submit{
+    font-weight: 500;
+    font-family: Poppins;
+    font-size: 16px;
+    padding: 16px 48px ;
+    color: white;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 4px ;
+    margin: auto;
+}
+
+.submit:hover{
+    background-color: #c03d3d;
+}
+
+.input {
+    transition: 100ms;
+}
+
+
+.input:active,
+.input:focus{
+border: none !important;
+box-shadow: none !important;
+outline: 4px solid rgba(212, 68, 68, 0.4);
+
+
+}
+
+
+.cont{
+  
+    flex-grow: 1;
+}

@@ -1,0 +1,60 @@
+.table{
+    width: 100%;
+    margin: 60px 0px  ;
+    
+        border-collapse: separate; /* Required for border-spacing to work */
+        border-spacing: 0 40px; /* 0px for columns, 10px for rows */
+    
+    
+}
+.table thead tr th{
+    padding: 14px ;
+    font-size: 30px ;
+    text-align: center;
+}
+
+
+.table thead tr{
+    border-radius: 6px ;
+    outline :6px solid rgba(212, 68, 68, 0.8) ;
+}
+.table tbody tr{
+    border-radius: 10px ;
+    outline: 2px solid rgba(0, 0, 0, 0.511);
+}
+.table tbody tr td,
+.table tbody tr td div
+{
+    padding: 24px ;
+    text-align: center;
+    font-family: Poppins;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.table tbody tr td div{
+    display: flex;
+    align-items:center ;
+    
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    gap: 10px ;
+    padding: 6px 12px ;
+    border-radius: 30px;
+}
+.table tbody tr td span{
+width: 20px ;
+height: 20px ;
+background-color: red;
+display: flex;
+border-radius: 50%;
+}
+
+.pinding{
+    background-color: rgba(255, 166, 0, 0.1);
+    color: orange !important;;
+    box-shadow: 0px 0px 2px ;
+}
+.pinding span{
+    background-color: orange !important;
+}

@@ -40,9 +40,7 @@ export default function CartRow({productId,quantity,details,onClick}) {
 
     const decrease=async ()=>{
       setQyt(true);
-      if(tempQuantity!=1){
-
-      
+      if(tempQuantity>1){      
       try{
         const {data}=await axios.patch('https://ecommerce-node4.onrender.com/cart/decraseQuantity',
         {
@@ -63,6 +61,8 @@ export default function CartRow({productId,quantity,details,onClick}) {
     }
     else{
       toast.info("You cant decrease the quantity");
+      setQyt(false)
+
     }
        
     }

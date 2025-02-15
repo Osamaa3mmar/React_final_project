@@ -31,7 +31,7 @@ console.log(discount);
         <p className={style.text}>Total:</p>
         <p className={style.price}>${final}</p>
       </div>
-      <button className={style.submit}>Procees to checkout</button>
+      {/* <button className={style.submit}>Procees to checkout</button> */}
     </div>
   )
 }
