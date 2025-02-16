@@ -47,7 +47,7 @@
     
     display: flex;
     align-items: center;
-    background-color: rgba(212, 68, 68, 0.6);
+   
     padding: 16px 16px ;
     text-decoration: none;
     gap: 10px;
@@ -55,7 +55,7 @@
     font-weight: 500;
     font-size: 22px ;
     border-radius: 6px; 
-    outline: 2px solid ;
+    outline: 2px solid rgba(212, 68, 68, 0.4);
     transition: 300ms;
 }
 .listItemCollapsed{

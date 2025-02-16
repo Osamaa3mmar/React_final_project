@@ -3,6 +3,7 @@ import style from './table.module.css'
 import axios from 'axios';
 import { useEffect } from 'react';
 import Loading from '../loading/Loading';
+import { toast } from 'react-toastify';
 export default function OrdersTable() {
 
     const [order,setOrders]=useState(null);
@@ -33,6 +34,30 @@ export default function OrdersTable() {
         }
     }
 
+
+    const canceleOrder=async(id)=>{
+        const toasId=toast.loading('Loading . . . ');
+        try{
+            const {data}=await axios.patch(`https://ecommerce-node4.onrender.com/order/cancel/${id}`,'',{
+                headers:{
+                    Authorization: `Tariq__${localStorage.getItem('token')}`
+                }
+            })
+        console.log(data);
+        toast.success("Order canceled !");
+        getData()
+        }
+        catch(e){
+            toast.error(e.message);
+        }
+        finally{
+            toast.dismiss(toasId)
+        }
+    }
+
+
+
+
 useEffect(()=>{
     getData();
 },[])
@@ -55,9 +80,10 @@ if(loading){
             <tbody>
                 {order.map((order)=>{
                     return <tr className={style.row} key={order._id}>
-                        <td className={style.data}><div className={order.status=='pending'?style.pinding:''}><span ></span>{order.status}</div></td>
+                        <td className={style.data}><div className={order.status=='pending'?style.pinding:order.status=='deliverd'?style.deliverd:''}><span ></span>{order.status}</div></td>
                         <td className={style.data}>${order.finalPrice}</td>
                         <td className={style.data}>{order.address}</td>
+                        <div className={style.cancele} onClick={()=>canceleOrder(order._id)}>cancele</div>
                     </tr>
                 })}
                 
