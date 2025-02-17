@@ -118,7 +118,7 @@ export default function MyNavbar() {
                 />
               </Link>
               <Link to={"/user/cart"} className={style.cart}>
-                <span className={style.cartCount}>{cartCount}</span>
+                <span className={style.cartCount}>{cartCount?cartCount:0}</span>
                 <FontAwesomeIcon
                   className={
                     path.pathname == "/user/cart"
