@@ -5,6 +5,9 @@
     gap: 50px ;
     padding: 30px 0px ;
 }
+.cont{
+    padding: 30px 0px ;
+}
 
 .subs{
     width: 20%;
@@ -12,9 +15,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: scroll;
     gap: 20px ;
-    height: 600px;
+    height: 550px;
     padding: 10px 10px ;
     background-color: rgba(128, 128, 128, 0.1);
     border-radius: 10px ;
@@ -41,7 +44,7 @@
     background: #555;
 }
 .imgg{
-    
+    flex-shrink: 0;
     height: 200px ;
     display: flex;
     overflow: hidden;
@@ -68,13 +71,11 @@
 }
 
 .main img{
-    width: 100%;
+    width: 90%;
     transition: 400ms;
 }
 
-.main img:hover{
-    scale: 0.8;
-}
+
 
 .name
 {
@@ -103,4 +104,72 @@ line-height: 21px;
 
 .infoCont{
     padding: 30px ;
+}
+
+
+.reviewCount{
+    font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px;
+}
+
+.price{
+    margin-top: 10px ;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; 
+letter-spacing: 0.72px;
+}
+
+
+    
+.add{
+    font-weight: 500;
+    font-family: Poppins;
+    font-size: 16px;
+    padding: 16px 48px ;
+    color: white;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 4px ;
+    margin: auto;
+}
+
+.add:hover{
+    background-color: #c03d3d;
+}
+
+
+.static{
+    color: gold;
+}
+
+
+.starCont{
+    background-color:rgba(255, 217, 0, 0.1) ;
+    padding: 4px 10px;
+    border-radius: 20px ;
+    box-shadow: 0px 0px 5px rgba(255, 217, 0, 0.5);
+    width: fit-content;
+}
+
+.stock{
+    background-color: rgba(0, 255, 0, 0.1);
+    padding: 4px 10px ;
+    color: lime;
+    border-radius: 30px ;
+    box-shadow: 0px 0px 5px rgba(0, 255, 0, 0.5);
+}
+
+
+.reviewCount{
+    background-color: rgba(135, 207, 235, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    color: skyblue;
+    box-shadow: 0px 0px 5px rgba(135, 207, 235, 0.5);
 }

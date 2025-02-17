@@ -1,0 +1,165 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px 150px 0px ;
+}
+.commentsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+.line{
+    width: 80%;
+    margin: auto;
+    height: 2px ;
+    background-color: black ;
+    margin: 40px auto ;
+}
+.commentContainer{
+    width: 80%;
+    background-color: #f5f5f5;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    outline: 2px solid #00000019;
+    position: relative;
+    padding: 14px 24px ;
+    border-radius: 20px ;
+    
+}
+
+
+.profile{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    width: fit-content;
+    transition-delay:1s ;
+    padding-bottom: 20px ;
+}
+
+.profile:hover .tags{
+    scale: 1;
+}
+.userImage{
+    width: 40px ;
+    border-radius: 50%;
+    outline: 2px solid;
+}
+.userName
+{
+    color: black;
+    font-size: 20px ;
+    margin: 0px ;
+    font-weight: 600;
+    font-family: Poppins;
+}
+
+.tags{
+   display:flex ;
+   align-items: center; 
+   gap: 6px ;
+   position: absolute;
+   background-color: red;
+   left: -252px ;
+   padding: 8px 16px ;
+   border-radius: 40px ;
+   background-color: white;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
+   scale: 0;
+   transition: 400ms;
+}
+
+.status,
+.role{
+    margin: 0px ;
+    display: flex;
+    align-items: center;
+    padding: 8px 14px ; 
+    gap: 6px; 
+    border-radius: 30px ;
+    font-family: Inter;
+    cursor: pointer;
+    color: lime;
+    background: rgba(0, 255, 0,0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(0, 255, 0,0.4);
+}
+.role{
+    background-color: rgba(135, 207, 235, 0.2);
+    color: skyblue;
+    border: solid 2px rgba(135, 207, 235, 0.4);
+}
+
+.status span,
+.role span{
+    width: 15px ;
+    height: 15px ;
+    border-radius: 50%;
+    background-color: lime;
+    display: flex;
+}
+.role span{
+    background-color: skyblue;
+}
+
+
+
+
+.starHolder{
+    position: absolute;
+    top: 0px ;
+    right: 0px ;
+    padding: 20px 24px ;
+}
+.date {
+    position: absolute;
+    bottom: 0px ;
+    right: 0px ;
+    padding: 20px 24px ;
+}
+
+
+
+.commentText{
+    font-family: Poppins;
+    font-size: 22px ;
+    font-weight: 400;
+    margin-bottom: 35px ;
+}
+
+.input{
+    height: 150px !important;
+}
+.input:active,
+.input:focus{
+border: none !important;
+box-shadow: none !important;
+outline: 4px solid rgba(212, 68, 68, 0.4);
+
+
+}
+
+
+.btn{
+    display: block;
+    width: 30%;
+    margin: auto;
+    padding: 6px 0px ;
+    border-radius: 6px ;
+    background-color: var(--primary);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 20px ;
+    transition: 100ms;
+}
+.btn:hover{
+    background-color: #c03d3d;
+    outline: 4px solid rgba(212, 68, 68, 0.4);
+}

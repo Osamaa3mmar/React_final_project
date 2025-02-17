@@ -1,9 +1,8 @@
 import { useParams } from "react-router-dom";
-import ProductContainer from "../../../component/user/ProducrContainer/ProductContainer";
-import SectionHead from "../../../component/user/SectionHead/SectionHead";
 import useFetch from "../../../hook/useFetch";
 import Loading from "../../../component/user/loading/Loading";
 import ProductDetaiels from "./ProductDetaiels";
+import CommentContainer from "../../../component/user/Comments/CommentContainer";
 
 export default function Product() {
   const {id}=useParams();
@@ -18,8 +17,8 @@ export default function Product() {
   else
   return (
     <div className="container">
-    {error?<div className="alert alert-dange">{error}</div>:<ProductDetaiels {...data.product}/>}      
-
+    {error?<div className="alert alert-danger">{error}</div>:<ProductDetaiels {...data.product} rate={data.avgRating}/>}      
+    {error?<div className="alert alert-danger">{error}</div>:<CommentContainer reviews={data.product.reviews}/>}
 
   
      

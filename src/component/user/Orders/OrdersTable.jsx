@@ -4,14 +4,17 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import Loading from '../loading/Loading';
 import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 export default function OrdersTable() {
 
     const [order,setOrders]=useState(null);
     const [loading,setLoading]=useState(true);
     const [error,setError]=useState(null);
-
+    const [tempLoading,setTempLoading]=useState(false);
 
     const getData=async()=>{
+        
         try{
             const {data}=await axios.get('https://ecommerce-node4.onrender.com/order',{
                 headers: {
@@ -36,6 +39,7 @@ export default function OrdersTable() {
 
 
     const canceleOrder=async(id)=>{
+        setTempLoading(true);
         const toasId=toast.loading('Loading . . . ');
         try{
             const {data}=await axios.patch(`https://ecommerce-node4.onrender.com/order/cancel/${id}`,'',{
@@ -45,13 +49,18 @@ export default function OrdersTable() {
             })
         console.log(data);
         toast.success("Order canceled !");
-        getData()
+        const current=order.find((item)=>{
+            return data.order._id===item._id;
+        }).status='cancelled';
+        console.log(current);
+        setTempLoading(false);
         }
         catch(e){
             toast.error(e.message);
         }
         finally{
             toast.dismiss(toasId)
+            setTempLoading(false);
         }
     }
 
@@ -80,10 +89,10 @@ if(loading){
             <tbody>
                 {order.map((order)=>{
                     return <tr className={style.row} key={order._id}>
-                        <td className={style.data}><div className={order.status=='pending'?style.pinding:order.status=='deliverd'?style.deliverd:''}><span ></span>{order.status}</div></td>
+                        <td className={style.data}><div className={order.status=='pending'?style.pinding:order.status=='deliverd'?style.deliverd:style.cancele}><span ></span>{order.status}</div></td>
                         <td className={style.data}>${order.finalPrice}</td>
                         <td className={style.data}>{order.address}</td>
-                        <div className={style.cancele} onClick={()=>canceleOrder(order._id)}>cancele</div>
+                        {order.status=='pending'?<td className={style.canceleBtn} onClick={tempLoading?'':()=>canceleOrder(order._id)}><FontAwesomeIcon icon={faX} /></td>:''}
                     </tr>
                 })}
                 
