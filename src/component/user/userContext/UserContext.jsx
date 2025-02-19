@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-
+import userIcon from '../../../public/Login/user.jpg'
 
 export const UserContext=createContext();
 
@@ -17,7 +17,7 @@ const UserContextProvider=({children})=>{
             });
             console.log(data);
             setUser(data.user);
-            setUserImage(data.user.image?data.user.image.secure_url:null);
+            setUserImage(data.user.image?data.user.image.secure_url:userIcon);
             
         }
 

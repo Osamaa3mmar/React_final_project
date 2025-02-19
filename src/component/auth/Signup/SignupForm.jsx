@@ -34,7 +34,7 @@ export default function SignupForm() {
     }catch(e){
       console.error(e)
       toast.update(toastId, {
-        render: `${e.message}`,
+        render: `${e.response.data.message}`,
         type: "error",
         isLoading: false,
         autoClose: 3000, 
