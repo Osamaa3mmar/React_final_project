@@ -25,6 +25,6 @@ export default function useFetch(url) {
     useEffect(()=>{
         getData();
 
-    },[url])
+    },[url]);
   return {data,loading,error}
 }

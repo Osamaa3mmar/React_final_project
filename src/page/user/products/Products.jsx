@@ -15,26 +15,7 @@ export default function Products() {
 
   return (
     <div>
-      <Swiper
-        
-        spaceBetween={50}
-        slidesPerView={3}
-        
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => setSwiperRef(swiper)} // Store Swiper instance
-      >
-        <SwiperSlide><div className="osama">slide1</div></SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-      </Swiper>
-
-      
-      <div style={{ marginTop: "10px" }}>
-        <button onClick={() => swiperRef?.slidePrev()}>Previous Slide</button>
-        <button onClick={() => swiperRef?.slideNext()}>Next Slide</button>
-      </div>
+     
     </div>
   );
 }

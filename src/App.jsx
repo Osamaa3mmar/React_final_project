@@ -24,6 +24,7 @@ import ProfileMain from "./component/user/Profile/ProfileMain";
 import Edit from "./page/user/profile/edit/Edit";
 import PlaceOrder from "./page/user/PlaceOrder/PlaceOrder";
 import Orders from "./page/user/orders/Orders";
+import ProductsContextProvider from "./component/user/ProductsContext/ProductsContext";
 export default function App() {
 
   const router =createBrowserRouter([
@@ -52,11 +53,13 @@ export default function App() {
       path:'/user',
       element:
       <Protected>
+        <ProductsContextProvider>
         <UserContextProvider>
        <CartContextProvider>
        <UserLayout/>
        </CartContextProvider>
        </UserContextProvider>
+       </ProductsContextProvider>
         </Protected>
         ,
       children:[

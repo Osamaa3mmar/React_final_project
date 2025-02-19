@@ -5,7 +5,7 @@ import style from './hero.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 export default function Category() {
-    const {loading ,data,error}=useFetch("https://ecommerce-node4.onrender.com/categories/active");
+    const {loading ,data,error}=useFetch("https://ecommerce-node4.onrender.com/categories");
     console.log(data)
 
     if(loading){

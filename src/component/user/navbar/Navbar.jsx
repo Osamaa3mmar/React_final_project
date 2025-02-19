@@ -4,6 +4,7 @@ import {
   faBriefcase,
   faCartShopping,
   faMagnifyingGlass,
+  faX,
 } from "@fortawesome/free-solid-svg-icons"; // Import specific icons
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -12,18 +13,22 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import style from "./navbar.module.css";
 import { toast } from "react-toastify";
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import  { CartContext } from "../Cart/CartContext/CartContext";
 import { UserContext } from "../userContext/UserContext";
+import { ProductsContext } from "../ProductsContext/ProductsContext";
 export default function MyNavbar() {
     const {userImage}=useContext(UserContext);
-  
+    const {products}=useContext(ProductsContext);
+    const [tempSearchList,setTempSearchList]=useState(null);
+    const [searchDialog,setSearchDialog]=useState(false);
+    const input=useRef();
   const path = useLocation();
   const {cartCount}=useContext(CartContext);
   const commingSoonAlert=()=>{
     
     const toastId = toast.loading("d");
-
+    
     toast.update(toastId,{
               render: "Comming soon !",
               type: "info",
@@ -35,7 +40,34 @@ export default function MyNavbar() {
               draggable: true,
             })
   }
+  const zoomAndOpenSearch=()=>{
+    setSearchDialog(true);
+    
 
+  }
+
+  const minmizeAndHideSearch=()=>{
+    setSearchDialog(false);
+    input.current.value='';
+    setTempSearchList(null);
+    
+
+  }
+
+
+  const search=()=>{
+    if(input.current.value.trim() === ""){
+      setTempSearchList(null)
+    }
+    else if(products ){
+      const searched=products.filter((product)=>{
+        return product.name.toLowerCase().includes(input.current.value.toLowerCase());
+      })
+      setTempSearchList(searched);
+      
+    }
+    
+  }
   const navigate=useNavigate();
 
 
@@ -47,6 +79,7 @@ export default function MyNavbar() {
     <Navbar expand="lg" className={style.navborder}>
       
       <Container>
+      
         <Navbar.Brand as={Link} to={"/user"}>
           React-Bootstrap
         </Navbar.Brand>
@@ -72,15 +105,7 @@ export default function MyNavbar() {
             >
               Contact
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              className={
-                path.pathname == "/user/about" ? style.active : style.navBtn
-              }
-              to={"/user/about"}
-            >
-              About
-            </Nav.Link>
+            
             <Nav.Link
               as={Link}
               className={
@@ -98,13 +123,36 @@ export default function MyNavbar() {
                 id="search"
                 className={style.searchInput}
                 placeholder="What are you looking for?"
+                autoComplete='off'
+                onFocus={zoomAndOpenSearch}
+                
+                onChange={search}
+                ref={input}
               />
-              <label htmlFor="search">
+             
+                {searchDialog?<FontAwesomeIcon className={style.xbtn} icon={faX} onClick={minmizeAndHideSearch} />:
+                 <label htmlFor="search">
                 <FontAwesomeIcon
                   className={style.searchIcon}
                   icon={faMagnifyingGlass}
                 />
               </label>
+                }
+                
+              {searchDialog?
+      <div className={style.searchBox}>
+        {tempSearchList?<ul>
+          {tempSearchList.map((temp)=>{
+            return <li key={temp._id}>
+              <img src={temp.mainImage.secure_url}/>
+              <Link onClick={minmizeAndHideSearch} className={style.searchLink} to={`/user/product/${temp._id}`}>{temp.name.split(/\s+/).slice(0, 5).join(' ')}</Link>
+              <p className={style.price}>{temp.price}</p>
+            </li>
+          })}
+        </ul>
+        :<p className={style.ppppp}>Type to search between products</p>}
+      </div>
+      :''}
             </div>
             <div className={style.icons}>
               <Link className="text-dark" to={"/user"} onClick={commingSoonAlert} >
