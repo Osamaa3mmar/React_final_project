@@ -3,7 +3,9 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import style from './forget.module.css'
+import style from './forget.module.css';
+import style2 from '../style.module.css'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 export default function EmailForm() {
@@ -97,8 +99,9 @@ export default function EmailForm() {
             <input type="text" required className={style.codeInput} disabled={sentCode?false:true} {...register('code4')} maxLength={1} />
         </div>
         </div>
-        
-        <input type="submit" value={"Change Password"}/>
+        <div className={style2.submitBtn}>
+        <input type="submit" value={"Change Password"} className={style2.in}/>
+        </div>
     </form>
     </div>
   )

@@ -1,0 +1,10 @@
+.page{
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont{
+    margin-top: 100px ;
+}

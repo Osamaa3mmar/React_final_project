@@ -14,8 +14,6 @@ const ProductsContextProvider=({children})=>{
             try{
                 const {data}=await axios.get('https://ecommerce-node4.onrender.com/products?page=1&limit=10');
                 setProducts(data.products);
-                console.log(data.products);
-                
             }
             catch(e){
                 console.log(e);
