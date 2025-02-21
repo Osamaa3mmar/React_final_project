@@ -25,6 +25,7 @@ import Edit from "./page/user/profile/edit/Edit";
 import PlaceOrder from "./page/user/PlaceOrder/PlaceOrder";
 import Orders from "./page/user/orders/Orders";
 import ProductsContextProvider from "./component/user/ProductsContext/ProductsContext";
+import ProductWithCat from "./page/user/ProductWithCat/ProductWithCat";
 export default function App() {
 
   const router =createBrowserRouter([
@@ -106,7 +107,7 @@ export default function App() {
         },
         {
           path:'category/:catId',
-          element:<div>here</div>
+          element:<Protected><ProductWithCat/></Protected>
         },
           {
             path:'product/:id',

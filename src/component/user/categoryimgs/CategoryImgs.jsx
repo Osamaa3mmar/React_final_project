@@ -15,7 +15,7 @@ export default function CategoryImgs() {
         {data?
         data.categories.map((item)=>{
             return <div key={item.id} className="col-lg-2 col-sm-3">
-                <Link to={'/user/'}>
+                <Link to={`/user/category/${item.id}`}>
             <img className={style.img+ " img-fluid"} src={item.image.secure_url} alt="" />
             
             </Link>
